@@ -1,0 +1,144 @@
+﻿<html>
+<head>
+<meta charset="UTF-8">
+<title >火灾预警系统</title>
+<style type="text/css">
+	#fir{
+		width:850px;
+		margin:0 auto;
+		height:500px;
+		border:2px solid blue;
+		margin-top:30px;
+	}
+	#left{
+		width:26%;
+		border:2px solid gray;
+		height:500px;
+	    float:left;
+	    background-image:url(img/天空.jpg);
+	    background-repeat:no-repeat;
+	    background-attachment:fixed;
+	}
+	#right{
+		width:73.02%;
+		border:2px solid gray;
+		height:500px;
+		float:right;
+	}
+	.sec{
+	
+	}
+	#top{
+		height:230px;
+	}
+	#mid{
+		height:130px;
+	}
+	#bel{
+		height:130px;
+	}
+	
+	.ge{
+		width:140px;
+		height:90px;
+		border:2px solid #fff;
+		border-radius:10px;
+	}
+	#gezhi1{
+		position:relative;
+		left:70px;
+		bottom:20px
+	}
+	#gezhi2{
+		position:relative;
+		left:70px;
+		bottom:120px;
+	}
+	#gezhi3{
+		position:relative;
+		left:70px;
+		bottom:95px;
+	}
+	.tu{
+		width:70px;
+		height:70px;
+		
+	}
+	#img1{
+		position:relative;
+		top:70px;
+	}
+	#img2{
+		position:relative;
+		bottom:20px;
+		right:10px;
+		width:90px;
+		height:90px;
+	}
+	p{
+		font-size:25px;
+	}
+	.zhi{
+		width:60px;
+		height:30px;
+
+	}
+	#zhi1{
+		position:relative;
+		top:40px;
+		left:5px;
+	}
+	#zhi2{
+		position:relative;
+		bottom:50px;
+		left:5px;
+	}
+	#zhi3{
+		position:relative;
+		bottom:30px;
+		left:5px;
+	}
+</style>
+</head>
+<body >
+	<div id="fir">
+		<div id="left">
+			<div class="sec" id="top">
+			      <img class="tu" id="img1" src="img/weather2.png">	
+			      	<div class="zhi" id="zhi1">
+			      		<p>天气</p>
+			      	</div>
+				<div class="ge" id="gezhi1">
+					
+				</div>
+			</div>
+			<div class="sec" id="mid">
+				<img class="tu" id="img2" src="img/temperature.png">
+					<div class="zhi" id="zhi2">
+			      		<p>温度</p>
+			      	</div>
+					<div class="ge" id="gezhi2">
+						
+					</div> 
+			</div>
+			<div class="sec" id="bel">
+				<img class="tu"id="img3" src="img/yyhumidity3.png">
+					<div class="zhi" id="zhi3">
+			      		<p>湿度</p>
+			      	</div>
+					<div class="ge" id="gezhi3">
+						
+					</div>
+			</div>
+		</div>
+		<div id="right">
+		<iframe src="http://192.168.43.168:8080/javascript_simple.html" width="650" height="500"></iframe>	
+		</div>
+	</div>
+</body>
+<script type=“text/javascript”>
+  setTimeout(“window.location.href='fire.php'”,2000);
+</script>
+</html>
+
+ 
