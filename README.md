@@ -1,41 +1,28 @@
-mjpg-streamer
+基于树莓派实现的远程监控环境监控系统
 =============
 
-Currently no issues are known, but since this software is quite young and not used widely it may cause problems. You must really know what you are doing, if you use this software. If you want to use the software you are obliged to check if the sourcecode does what you expect it to do and take the risk yourself to use it.
+使用树莓派作为服务器来实现对网页的支持.同时利用树莓派的摄像头实现对监控的支持，所以打开网页就实现了监控的获取，且可以查看环境温度湿度，空气状况。
+
+> 摄像头的图像的的转发使用mjpg-streame
 
 
-Usage
+使用方式
 =====
 
-When launching mjpg-streamer, you specify one or more input plugins and an output plugin. For example, to stream a V4L compatible webcam via an HTTP server (the most common use case), you
-can do something like this:
+前置环境（Linux）：Python3
 
-	mjpg_streamer -i input_uvc.so -o output_http.so
+运行 ：
 
-Each plugin supports various options, you can view the plugin's options via its `--help` option:
+    remote monitor/www/auto_run.sh
 
-	mjpg_streamer -i 'input_uvc.so --help'
+主要文件
+=====
+
+1. auto_run.sh：bash脚本文件，启动GetPage.py，启动net.sh
+2. GetPage.py：python脚本获取串口数据，刷新网页部件
+3. main.html：网页主框架负责规划组件位置
+4. fire.html：视频显示组件，负责将视频串流显示到页面，嵌套在main.html
+5. shuju.html:数据显示组件，负责将数据显示到页面，嵌套在main.html
 
 
-More examples can be found in the start.sh bash script.
-
-Plugin documentation
-====================
-
-Input plugins:
-
-* input_file
-* input_http
-* input_opencv ([documentation](plugins/input_opencv/README.md))
-* input_ptp2
-* input_raspicam ([documentation](plugins/input_raspicam/README.md))
-* input_uvc ([documentation](plugins/input_uvc/README.md))
-
-Output plugins:
-
-* output_file
-* output_http ([documentation](plugins/output_http/README.md))
-* output_rtsp
-* output_udp
-* output_viewer ([documentation](plugins/output_viewer/README.md))
-
+ 
